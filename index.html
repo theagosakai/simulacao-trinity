@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulação Trinity – Bomba Atômica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <header class="head">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <div>
+          <h1>TRINIT<strong>y</strong></h1>
+          <p class="brand-sub">Testes Nucleares <span class="era">• 1945</span></p>
+        </div>
+      </div>
+
+      <div class="panel-top">
+        <div class="stat big">
+          <span class="stat-label">Nível de Ativação</span>
+          <span class="stat-value" id="activation-display">0%</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Temperatura</span>
+          <span class="stat-value temp" id="temp-display">20 °C</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Pressão Atmosférica</span>
+          <span class="stat-value pres" id="pres-display">101.3 kPa</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Limite de Segurança</span>
+          <span class="stat-value safe" id="safe-display">OK</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="stage-wrap">
+      <section class="world">
+        <canvas id="world" width="448" height="448"></canvas>
+        <div class="world-overlay">
+          <div class="hud">
+            <div class="hud-row">
+              <span class="hud-dot hud-dot-yellow"></span>
+              <span class="hud-label">Radiação</span>
+              <span class="hud-value" id="hud-rad">0</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-dot hud-dot-red"></span>
+              <span class="hud-label">Calor</span>
+              <span class="hud-value" id="hud-heat">0</span>
+            </div>
+            <div class="hud-row">
+              <span class="hud-dot hud-dot-blue"></span>
+              <span class="hud-label">Pressão</span>
+              <span class="hud-value" id="hud-pres">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="graph">
+          <div class="graph-title">Histograma de Radiação</div>
+          <div class="graph-body" id="graph-body"></div>
+        </div>
+
+        <div class="bars">
+          <div class="bar-row">
+            <div class="bar-head">
+              <span class="bar-label">Radiação</span>
+              <span class="bar-val" id="val-rad">0</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" id="bar-rad"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head">
+              <span class="bar-label">Temperatura</span>
+              <span class="bar-val" id="val-heat">0</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-heat" id="bar-heat"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head">
+              <span class="bar-label">Pressão</span>
+              <span class="bar-val" id="val-pres">0</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-pres" id="bar-pres"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="btn-start" class="btn btn-glow">▶ Ligar</button>
+          <button id="btn-stablize" class="btn">⟳ Estabilizar</button>
+          <button id="btn-safety" class="btn btn-danger">⏏ Segurança</button>
+          <button id="btn-reset" class="btn">↺ Reset</button>
+        </div>
+
+        <div class="log" id="log">
+          <div class="log-title">📜 Registro</div>
+          <div class="log-entry">Sistema inicializado. Licença de teste ativada.</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      <p>Evite olhar para o display por mais de 5 segundos.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
