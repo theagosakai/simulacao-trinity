@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testes locais
+test.json
+stylestest.css
+inspect*.js
